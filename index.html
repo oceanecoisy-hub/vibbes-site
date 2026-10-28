@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vibbes · bientôt</title>
+<meta name="description" content="Vibbes, l'app pour te faire des potes et sortir près de chez toi. Bientôt disponible.">
+<meta property="og:title" content="Vibbes arrive bientôt">
+<meta property="og:description" content="L'app pour te faire des potes et sortir près de chez toi. Laisse ton e-mail, on te prévient au lancement.">
+<meta name="theme-color" content="#F9F6F0">
+<style>
+:root{
+  --fond:#F9F6F0;
+  --carte:#FFFFFF;
+  --encre:#222222;
+  --gris:#8C857B;
+  --trait:#E8E2D9;
+  --orange:#E2724F;
+  --orange-fonce:#C45A38;
+  --orange-clair:#FBEAE4;
+  --erreur:#D90429;
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--fond);color:var(--encre)}
+body{
+  min-height:100vh;min-height:100svh;
+  font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  display:grid;grid-template-rows:auto 1fr auto;
+  padding:clamp(20px,4vw,48px);
+  -webkit-font-smoothing:antialiased;
+}
+header{display:flex;justify-content:space-between;align-items:center}
+.logo{display:inline-flex;align-items:baseline;font-weight:900;font-size:26px;letter-spacing:.2px;color:var(--encre);text-decoration:none}
+.logo .o{color:var(--orange)}
+.logo .miroir{display:inline-block;transform:scaleX(-1);margin-right:-2px}
+.lieu{font-size:15px;color:var(--gris)}
+
+main{display:flex;flex-direction:column;justify-content:center;gap:clamp(28px,5vw,56px);padding:clamp(32px,6vw,72px) 0}
+.big{
+  margin:0;font-weight:900;line-height:.86;letter-spacing:-0.055em;
+  font-size:clamp(84px,23vw,340px);color:var(--encre);
+}
+.big span{display:inline-block;color:var(--orange);animation:pulse 2.4s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.25}}
+
+.bas{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:clamp(24px,5vw,72px);align-items:start}
+.pitch{margin:0;font-size:clamp(20px,2.3vw,28px);line-height:1.25;font-weight:600;max-width:22ch}
+
+form{display:flex;flex-direction:column;gap:12px;width:100%;max-width:560px;justify-self:end}
+.ligne{display:flex;gap:10px;flex-wrap:wrap}
+label.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+input{
+  flex:1 1 180px;min-width:0;height:56px;padding:0 18px;
+  background:var(--carte);color:var(--encre);
+  border:1.5px solid var(--trait);border-radius:14px;
+  font:inherit;font-size:17px;
+}
+input::placeholder{color:var(--gris)}
+input:focus{outline:none;border-color:var(--orange)}
+#ville{flex:0 1 170px}
+button{
+  height:56px;padding:0 26px;border:0;border-radius:14px;cursor:pointer;
+  background:var(--orange);color:#FFFFFF;
+  font:inherit;font-size:17px;font-weight:800;
+}
+button:hover{background:var(--orange-fonce)}
+button:focus-visible{outline:2px solid var(--encre);outline-offset:3px}
+button[disabled]{opacity:.6;cursor:wait}
+.note{margin:0;font-size:13px;line-height:1.5;color:var(--gris)}
+.note a{color:inherit}
+.msg{margin:0;font-size:16px;font-weight:600;min-height:1.5em}
+.msg.ok{color:var(--orange-fonce)}
+.msg.err{color:var(--erreur)}
+
+footer{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:14px;color:var(--gris)}
+footer a{color:var(--gris);text-decoration:none}
+footer a:hover,footer a:focus-visible{color:var(--encre)}
+.liens{display:flex;gap:18px;flex-wrap:wrap}
+.piege{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+
+@media (max-width:760px){
+  .bas{grid-template-columns:1fr}
+  form{justify-self:stretch}
+  #ville{flex:1 1 140px}
+  button{flex:1 1 100%}
+}
+@media (prefers-reduced-motion:reduce){.big span{animation:none}}
+</style>
+</head>
+<body>
+<header>
+  <a class="logo" href="/" aria-label="Vibbes">VI<span class="o miroir">B</span><span class="o">B</span>ES<span class="o">.</span></a>
+  <span class="lieu">Côte d'Azur</span>
+</header>
+
+<main>
+  <h1 class="big" aria-label="Bientôt">bientôt<span>.</span></h1>
+
+  <div class="bas">
+    <p class="pitch">L'app pour te faire des potes et sortir près de chez toi.</p>
+
+    <form id="f" novalidate>
+      <div class="ligne">
+        <label class="sr" for="email">Ton e-mail</label>
+        <input id="email" name="email" type="email" inputmode="email" autocomplete="email" placeholder="Ton e-mail" required maxlength="254">
+        <label class="sr" for="ville">Ta ville</label>
+        <input id="ville" name="ville" type="text" autocomplete="address-level2" placeholder="Ta ville" maxlength="80">
+        <div class="piege" aria-hidden="true"><label for="site">Ne pas remplir</label><input id="site" name="site" type="text" tabindex="-1" autocomplete="off"></div>
+        <button id="b" type="submit">Préviens-moi</button>
+      </div>
+      <p class="msg" id="m" role="status" aria-live="polite"></p>
+      <p class="note">On t'écrit au lancement, c'est tout. Ton e-mail n'est ni vendu ni partagé, et tu peux le faire supprimer quand tu veux. <a href="/confidentialite.html">Confidentialité</a></p>
+    </form>
+  </div>
+</main>
+
+<footer>
+  <a href="mailto:contact@vibbes.fr">contact@vibbes.fr</a>
+  <span class="liens"><a href="/mentions-legales.html">Mentions légales</a><a href="/confidentialite.html">Confidentialité</a><span>18 ans et plus</span></span>
+</footer>
+
+<script src="/app.js" defer></script>
+</body>
+</html>
