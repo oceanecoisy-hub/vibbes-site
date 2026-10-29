@@ -8,13 +8,13 @@
   try { source = (new URLSearchParams(location.search).get('src') || '').replace(/[^a-zA-Z0-9_-]/g,'').slice(0,40); } catch(_){}
 
   function dire(txt, ok){ m.textContent = txt; m.className = 'msg ' + (ok ? 'ok' : 'err'); }
-  var OK = 'C’est noté. On te prévient dès que Vibbes est dispo.';
+  var OK = 'Inscription confirmée. Tu seras informé·e du lancement en avant-première.';
 
   f.addEventListener('submit', function(ev){
     ev.preventDefault();
     // Robots : champ piège rempli ou formulaire envoyé en moins de 2 secondes
     if ((piege && piege.value) || Date.now() - ouvertLe < 2000) { dire(OK, true); f.reset(); return; }
-    if (envois >= 5) { dire('Tu as déjà envoyé plusieurs inscriptions. Recharge la page pour réessayer.', false); return; }
+    if (envois >= 5) { dire('Trop de tentatives. Recharge la page pour réessayer.', false); return; }
     var email = e.value.trim();
     if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email) || email.length > 254) { dire('Cet e-mail ne semble pas valide. Vérifie-le et réessaie.', false); e.focus(); return; }
     envois++;
@@ -25,11 +25,11 @@
       body: JSON.stringify({ email: email, ville: v.value.trim().slice(0,80) || null, source: source || null })
     }).then(function(r){
       if (r.ok) { dire(OK, true); f.reset(); }
-      else if (r.status === 409) { dire('Tu es déjà sur la liste. On te prévient au lancement.', true); }
-      else if (r.status === 400) { dire('Beaucoup de monde en même temps. Réessaie dans une minute.', false); }
-      else { dire('L’inscription n’a pas marché. Réessaie dans un instant.', false); }
+      else if (r.status === 409) { dire('Tu es déjà inscrit·e. Tu seras informé·e du lancement en avant-première.', true); }
+      else if (r.status === 400) { dire('Le service est très sollicité. Réessaie dans une minute.', false); }
+      else { dire('L’inscription a échoué. Réessaie dans un instant.', false); }
     }).catch(function(){
       dire('Pas de connexion. Vérifie ton réseau et réessaie.', false);
-    }).then(function(){ b.disabled = false; b.textContent = 'Préviens-moi'; });
+    }).then(function(){ b.disabled = false; b.textContent = 'Rejoindre la liste'; });
   });
 })();
