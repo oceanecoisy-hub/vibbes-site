@@ -3,11 +3,35 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Vibbes · bientôt</title>
-<meta name="description" content="Vibbes, l'app pour te faire des potes et sortir près de chez toi. Bientôt disponible.">
+<title>Vibbes · L'app pour se faire des amis et sortir sur la Côte d'Azur</title>
+<meta name="description" content="Vibbes, l'application pour se faire de nouveaux amis et sortir près de chez toi : soirées, événements et bons plans sur la Côte d'Azur et dans le Var. Inscris-toi pour être prévenu du lancement.">
+<link rel="canonical" href="https://vibbes.fr/">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="Vibbes">
+<meta name="theme-color" content="#F9F6F0">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Vibbes">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:url" content="https://vibbes.fr/">
 <meta property="og:title" content="Vibbes arrive bientôt">
 <meta property="og:description" content="L'app pour te faire des potes et sortir près de chez toi. Laisse ton e-mail, on te prévient au lancement.">
-<meta name="theme-color" content="#F9F6F0">
+<meta property="og:image" content="https://vibbes.fr/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Vibbes, bientôt. L'app pour te faire des potes et sortir près de chez toi.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Vibbes arrive bientôt">
+<meta name="twitter:description" content="L'app pour te faire des potes et sortir près de chez toi.">
+<meta name="twitter:image" content="https://vibbes.fr/og.png">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"Organization","@id":"https://vibbes.fr/#org","name":"Vibbes","url":"https://vibbes.fr/","logo":"https://vibbes.fr/apple-touch-icon.png","email":"contact@vibbes.fr","description":"Application de rencontres amicales et de sorties pour les 18 ans et plus.","areaServed":"FR"},
+{"@type":"WebSite","@id":"https://vibbes.fr/#site","url":"https://vibbes.fr/","name":"Vibbes","inLanguage":"fr-FR","publisher":{"@id":"https://vibbes.fr/#org"}}
+]}
+</script>
 <style>
 :root{
   --fond:#F9F6F0;
@@ -25,7 +49,7 @@ html,body{margin:0;background:var(--fond);color:var(--encre)}
 body{
   min-height:100vh;min-height:100svh;
   font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-  display:grid;grid-template-rows:auto 1fr auto;
+  display:grid;grid-template-rows:auto auto auto auto;
   padding:clamp(20px,4vw,48px);
   -webkit-font-smoothing:antialiased;
 }
@@ -35,7 +59,7 @@ header{display:flex;justify-content:space-between;align-items:center}
 .logo .miroir{display:inline-block;transform:scaleX(-1);margin-right:-2px}
 .lieu{font-size:15px;color:var(--gris)}
 
-main{display:flex;flex-direction:column;justify-content:center;gap:clamp(28px,5vw,56px);padding:clamp(32px,6vw,72px) 0}
+main{min-height:calc(100svh - 150px);display:flex;flex-direction:column;justify-content:center;gap:clamp(28px,5vw,56px);padding:clamp(32px,6vw,72px) 0}
 .big{
   margin:0;font-weight:900;line-height:.86;letter-spacing:-0.055em;
   font-size:clamp(84px,23vw,340px);color:var(--encre);
@@ -76,10 +100,15 @@ footer{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-s
 footer a{color:var(--gris);text-decoration:none}
 footer a:hover,footer a:focus-visible{color:var(--encre)}
 .liens{display:flex;gap:18px;flex-wrap:wrap}
+.apropos{border-top:1.5px solid var(--trait);padding:clamp(40px,7vw,88px) 0 clamp(48px,8vw,96px);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:clamp(24px,5vw,72px)}
+.apropos h2{margin:0;font-weight:900;font-size:clamp(30px,4vw,48px);line-height:1.02;letter-spacing:-0.035em;max-width:14ch}
+.apropos .texte{max-width:58ch}
+.apropos p{margin:0 0 16px;font-size:18px;line-height:1.6;color:#4A4540}
+.apropos p:last-child{margin:0}
 .piege{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
 
 @media (max-width:760px){
-  .bas{grid-template-columns:1fr}
+  .bas,.apropos{grid-template-columns:1fr}
   form{justify-self:stretch}
   #ville{flex:1 1 140px}
   button{flex:1 1 100%}
@@ -113,6 +142,15 @@ footer a:hover,footer a:focus-visible{color:var(--encre)}
     </form>
   </div>
 </main>
+
+<section class="apropos" aria-labelledby="apropos-titre">
+  <h2 id="apropos-titre">Se faire des amis, pour de vrai.</h2>
+  <div class="texte">
+    <p>Vibbes est une application pour les 18 ans et plus qui veulent rencontrer de nouvelles personnes en amitié et sortir plus souvent&nbsp;: soirées, sorties à plusieurs et événements près de chez soi.</p>
+    <p>On commence par la Côte d'Azur et le Var, autour de Hyères, Toulon et Nice, avant d'arriver dans d'autres villes de France.</p>
+    <p>Tu viens d'emménager, tes potes ont déménagé, ou tu as simplement envie d'agrandir ton cercle&nbsp;? Laisse ton e-mail plus haut&nbsp;: on te prévient dès que l'app est disponible.</p>
+  </div>
+</section>
 
 <footer>
   <a href="mailto:contact@vibbes.fr">contact@vibbes.fr</a>
