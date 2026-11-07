@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Vibbes · Application de rencontres amicales et de sorties</title>
-<meta name="description" content="Vibbes, l'application de rencontres amicales et de sorties : rencontre des personnes qui partagent tes envies, rejoins des soirées et des événements près de chez toi. Lancement en France, inscris-toi à la liste d'attente.">
+<title>Vibbes · L'appli pour se faire des amis et sortir près de chez toi</title>
+<meta name="description" content="Vibbes, l'application pour se faire des amis : trouve des gens près de chez toi pour un café, une séance de sport, un verre ou une expo, à toute heure. Rencontres amicales entre adultes, lancement en France. Rejoins la liste d'attente.">
 <link rel="canonical" href="https://vibbes.fr/">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta name="author" content="Vibbes">
@@ -17,19 +17,20 @@
 <meta property="og:locale" content="fr_FR">
 <meta property="og:url" content="https://vibbes.fr/">
 <meta property="og:title" content="Vibbes arrive bientôt">
-<meta property="og:description" content="L'application de rencontres amicales et de sorties. Inscris-toi à la liste d'attente pour vivre le lancement en avant-première.">
+<meta property="og:description" content="L'appli pour se faire des amis et sortir près de chez toi : café, sport, verre, expo, à toute heure. Rejoins la liste d'attente.">
 <meta property="og:image" content="https://vibbes.fr/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Vibbes, bientôt. L'application de rencontres amicales et de sorties.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Vibbes arrive bientôt">
-<meta name="twitter:description" content="L'application de rencontres amicales et de sorties.">
+<meta name="twitter:description" content="L'appli pour se faire des amis et sortir près de chez toi.">
 <meta name="twitter:image" content="https://vibbes.fr/og.png">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
-{"@type":"Organization","@id":"https://vibbes.fr/#org","name":"Vibbes","url":"https://vibbes.fr/","logo":"https://vibbes.fr/apple-touch-icon.png","email":"contact@vibbes.fr","description":"Application de rencontres amicales et de sorties pour les 18 ans et plus.","areaServed":"FR"},
-{"@type":"WebSite","@id":"https://vibbes.fr/#site","url":"https://vibbes.fr/","name":"Vibbes","inLanguage":"fr-FR","publisher":{"@id":"https://vibbes.fr/#org"}}
+{"@type":"Organization","@id":"https://vibbes.fr/#org","name":"Vibbes","url":"https://vibbes.fr/","logo":"https://vibbes.fr/apple-touch-icon.png","email":"contact@vibbes.fr","description":"Application pour se faire des amis et sortir près de chez soi, pour les 18 ans et plus.","sameAs":["https://www.tiktok.com/@vibbes.app","https://x.com/vibbesapp","https://www.youtube.com/@vibbesapp","https://www.pinterest.fr/vibbesapp/"],"areaServed":"FR"},
+{"@type":"WebSite","@id":"https://vibbes.fr/#site","url":"https://vibbes.fr/","name":"Vibbes","inLanguage":"fr-FR","publisher":{"@id":"https://vibbes.fr/#org"}},
+{"@type": "FAQPage", "@id": "https://vibbes.fr/#faq", "mainEntity": [{"@type": "Question", "name": "Qu'est-ce que Vibbes ?", "acceptedAnswer": {"@type": "Answer", "text": "Vibbes est une application de rencontres amicales pour les 18 ans et plus. Elle te permet de trouver des personnes près de chez toi pour partager une activité : un café, du sport, un verre, une balade, une expo ou une sortie."}}, {"@type": "Question", "name": "Comment se faire des amis dans une nouvelle ville ?", "acceptedAnswer": {"@type": "Answer", "text": "Le plus simple, c'est de partager des activités régulières avec des gens qui ont les mêmes envies que toi. Sur Vibbes, tu indiques ce que tu as envie de faire et l'app te propose des personnes et des activités près de chez toi."}}, {"@type": "Question", "name": "Vibbes, c'est une application de rencontre amoureuse ?", "acceptedAnswer": {"@type": "Answer", "text": "Non. Vibbes est faite pour l'amitié et les sorties entre adultes, pas pour la drague. L'idée, c'est d'élargir ton cercle d'amis."}}, {"@type": "Question", "name": "Est-ce que Vibbes est gratuite ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui, Vibbes est gratuite. Des options payantes facultatives arriveront plus tard."}}, {"@type": "Question", "name": "Quand sort l'application ?", "acceptedAnswer": {"@type": "Answer", "text": "Vibbes sortira bientôt sur iPhone en France, puis sur Android. Inscris-toi à la liste d'attente pour être prévenu·e du lancement et en profiter en avant-première."}}, {"@type": "Question", "name": "Est-ce que c'est sécurisé ?", "acceptedAnswer": {"@type": "Answer", "text": "Vibbes est réservée aux 18 ans et plus. Tu peux signaler ou bloquer un profil à tout moment, et nos équipes traitent chaque signalement."}}]}
 ]}
 </script>
 <style>
@@ -69,6 +70,22 @@ main{min-height:calc(100svh - 150px);display:flex;flex-direction:column;justify-
 
 .bas{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:clamp(24px,5vw,72px);align-items:start}
 .pitch{margin:0;font-size:clamp(20px,2.3vw,28px);line-height:1.25;font-weight:600;max-width:22ch}
+.bloc{border-top:1.5px solid var(--trait);padding:clamp(40px,7vw,88px) 0;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:clamp(24px,5vw,72px)}
+.bloc h2{margin:0;font-weight:900;font-size:clamp(30px,4vw,48px);line-height:1.02;letter-spacing:-0.035em;max-width:14ch}
+.etapes{margin:0;padding:0;list-style:none;display:grid;gap:22px;counter-reset:e}
+.etapes li{counter-increment:e;display:grid;grid-template-columns:44px 1fr;gap:16px;align-items:start}
+.etapes li::before{content:counter(e);width:44px;height:44px;border-radius:50%;background:var(--orange-clair);color:var(--orange-fonce);font-weight:800;font-size:18px;display:grid;place-items:center}
+.etapes h3,.faq h3{margin:0 0 4px;font-size:19px;font-weight:800}
+.etapes p,.faq p{margin:0;font-size:17px;line-height:1.6;color:#4A4540}
+.envies{display:flex;flex-wrap:wrap;gap:10px;margin:0;padding:0;list-style:none}
+.envies li{background:var(--carte);border:1.5px solid var(--trait);border-radius:999px;padding:10px 16px;font-size:16px;font-weight:600}
+.faq{display:grid;gap:26px}
+.faq details{border-bottom:1.5px solid var(--trait);padding-bottom:18px}
+.faq summary{cursor:pointer;list-style:none;font-size:19px;font-weight:800}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";float:right;color:var(--orange);font-weight:900}
+.faq details[open] summary::after{content:"–"}
+.faq details p{margin-top:10px}
 
 form{display:flex;flex-direction:column;gap:12px;width:100%;max-width:560px;justify-self:end}
 .ligne{display:flex;gap:10px;flex-wrap:wrap}
@@ -108,7 +125,7 @@ footer a:hover,footer a:focus-visible{color:var(--encre)}
 .piege{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
 
 @media (max-width:760px){
-  .bas,.apropos{grid-template-columns:1fr}
+  .bas,.apropos,.bloc{grid-template-columns:1fr}
   form{justify-self:stretch}
   #ville{flex:1 1 140px}
   button{flex:1 1 100%}
@@ -123,10 +140,10 @@ footer a:hover,footer a:focus-visible{color:var(--encre)}
 </header>
 
 <main>
-  <h1 class="big" aria-label="Bientôt">bientôt<span>.</span></h1>
+  <p class="big" aria-hidden="true">bientôt<span>.</span></p>
 
   <div class="bas">
-    <p class="pitch">L'application de rencontres amicales et de sorties.</p>
+    <h1 class="pitch">L'appli pour se faire des amis et sortir près de chez toi.</h1>
 
     <form id="f" novalidate>
       <div class="ligne">
@@ -146,9 +163,38 @@ footer a:hover,footer a:focus-visible{color:var(--encre)}
 <section class="apropos" aria-labelledby="apropos-titre">
   <h2 id="apropos-titre">Une nouvelle façon de créer des liens.</h2>
   <div class="texte">
-    <p>Vibbes est l'application qui facilite les rencontres amicales entre adultes. Découvre des personnes qui partagent tes envies, rejoins des soirées et des événements près de chez toi, et élargis ton cercle en toute simplicité.</p>
+    <p>Vibbes est l'application qui facilite les rencontres amicales entre adultes. Un café le matin, une séance à la salle à midi, un verre après le travail, une expo le week-end : trouve des personnes près de chez toi qui ont envie de la même chose, au même moment.</p>
+    <p>Que tu viennes d'emménager dans une nouvelle ville, que tes amis soient partis ailleurs ou que tu aies simplement envie d'élargir ton cercle, Vibbes t'aide à te faire des amis sans prise de tête.</p>
     <p>Lancement prochain partout en France, avant un déploiement à l'international.</p>
     <p>Les 1&nbsp;000 premiers inscrits vivront le lancement en avant-première. Inscris-toi à la liste d'attente pour en faire partie.</p>
+  </div>
+</section>
+
+<section class="bloc" aria-labelledby="comment-titre">
+  <h2 id="comment-titre">Comment ça marche&nbsp;?</h2>
+  <ol class="etapes">
+    <li><div><h3>Dis ce dont tu as envie</h3><p>Un café, une séance de sport, un afterwork, une expo : choisis tes envies du moment.</p></div></li>
+    <li><div><h3>Découvre qui est partant près de toi</h3><p>Vibbes te montre des personnes et des activités autour de toi, à l'heure qui t'arrange.</p></div></li>
+    <li><div><h3>Retrouvez-vous pour de vrai</h3><p>Discute, fixe le rendez-vous, et vis le moment. Les amitiés commencent souvent comme ça.</p></div></li>
+  </ol>
+</section>
+
+<section class="bloc" aria-labelledby="envies-titre">
+  <h2 id="envies-titre">Pour toutes tes envies, à toute heure.</h2>
+  <ul class="envies">
+    <li>☕ Un café</li><li>🏋️ La salle de sport</li><li>🍹 Un verre</li><li>🎨 Une expo</li><li>🥾 Une rando</li><li>🎶 Un concert</li><li>🏃 Un footing</li><li>🍽️ Un resto</li><li>🎾 Un padel</li><li>📚 Un club de lecture</li>
+  </ul>
+</section>
+
+<section class="bloc" aria-labelledby="faq-titre">
+  <h2 id="faq-titre">Questions fréquentes</h2>
+  <div class="faq">
+    <details><summary>Qu'est-ce que Vibbes ?</summary><p>Vibbes est une application de rencontres amicales pour les 18 ans et plus. Elle te permet de trouver des personnes près de chez toi pour partager une activité : un café, du sport, un verre, une balade, une expo ou une sortie.</p></details>
+    <details><summary>Comment se faire des amis dans une nouvelle ville ?</summary><p>Le plus simple, c'est de partager des activités régulières avec des gens qui ont les mêmes envies que toi. Sur Vibbes, tu indiques ce que tu as envie de faire et l'app te propose des personnes et des activités près de chez toi.</p></details>
+    <details><summary>Vibbes, c'est une application de rencontre amoureuse ?</summary><p>Non. Vibbes est faite pour l'amitié et les sorties entre adultes, pas pour la drague. L'idée, c'est d'élargir ton cercle d'amis.</p></details>
+    <details><summary>Est-ce que Vibbes est gratuite ?</summary><p>Oui, Vibbes est gratuite. Des options payantes facultatives arriveront plus tard.</p></details>
+    <details><summary>Quand sort l'application ?</summary><p>Vibbes sortira bientôt sur iPhone en France, puis sur Android. Inscris-toi à la liste d'attente pour être prévenu·e du lancement et en profiter en avant-première.</p></details>
+    <details><summary>Est-ce que c'est sécurisé ?</summary><p>Vibbes est réservée aux 18 ans et plus. Tu peux signaler ou bloquer un profil à tout moment, et nos équipes traitent chaque signalement.</p></details>
   </div>
 </section>
 
